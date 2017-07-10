@@ -102,7 +102,7 @@ angular.module('app.controller', ['ui-leaflet'])
                 lat: pos.lat,
                 lng: pos.lng,
                 focus: true,
-                message: "สังเกตุ, ถ้ามีกลุ่มเมฆในวงกลมแดง</br>แสดงว่ามีฝนใกล้ๆ บ้านเรา (20km)",
+                message: "สังเกตุ!! ถ้ามีกลุ่มเมฆในวงกลมแดง</br>แสดงว่ามีฝนใกล้ๆ บ้านเรา (20km)",
                 draggable: false
             };
         var circleMarker = {
