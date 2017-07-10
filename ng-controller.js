@@ -99,21 +99,22 @@ angular.module('app.controller', ['ui-leaflet'])
         };
 
         var myhouse = {
-                lat: pos.lat,
-                lng: pos.lng,
-                focus: true,
-                message: "สังเกตุ!! ถ้ามีกลุ่มเมฆในวงกลมแดง</br>แสดงว่ามีฝนใกล้ๆ บ้านเรา (20km)",
-                draggable: false
-            };
+            lat: pos.lat,
+            lng: pos.lng,
+            focus: true,
+            message: "สังเกตุ!! ถ้ามีกลุ่มเมฆในวงกลมแดง</br>แสดงว่ามีฝนใกล้ๆ บ้านเรา (20km)",
+            draggable: false
+        };
         var circleMarker = {
-                    type: "circle",
-                    weight: 1,
-		            color: '#ff612f',
-                    fillOpacity: 0.1,
-                    radius: 20000,
-                    latlngs: pos
-                };
-        
+            type: "circle",
+            weight: 1,
+            color: '#ff612f',
+            fillOpacity: 0.1,
+            radius: 20000,
+            latlngs: pos
+        };
+
+        $scope.today = new Date();
 
         angular.extend($scope, {
             center: {
@@ -122,11 +123,11 @@ angular.module('app.controller', ['ui-leaflet'])
                 zoom: 10
             },
             markers: {
-                    myhouse: angular.copy(myhouse)
-                },
-            
+                myhouse: angular.copy(myhouse)
+            },
+
             paths: {
-                    circleMarker
+                circleMarker
             },
             layercontrol: {
                 icons: {
@@ -162,7 +163,7 @@ angular.module('app.controller', ['ui-leaflet'])
                     province: province,
                     radar_pl: radar_pl
                 }
-            },           
+            },
 
             //village
             removeVillageLayer: function () {
@@ -216,7 +217,7 @@ angular.module('app.controller', ['ui-leaflet'])
         $scope.checkboxModel = {
             vill: false,
             tambon: false,
-            amphoe: false,            
+            amphoe: false,
             province: true,
             radar_pl: true
         };
@@ -236,19 +237,19 @@ angular.module('app.controller', ['ui-leaflet'])
                 } else {
                     $scope.removeTambonLayer();
                 }
-            }else if (val == 'amphoe') {
+            } else if (val == 'amphoe') {
                 if ($scope.checkboxModel.amphoe == true) {
                     $scope.addAmphoeLayer();
                 } else {
                     $scope.removeAmphoeLayer();
                 }
-            }else if (val == 'province') {
+            } else if (val == 'province') {
                 if ($scope.checkboxModel.province == true) {
                     $scope.addProvinceLayer();
                 } else {
                     $scope.removeProvinceLayer();
                 }
-            }else if (val == 'radar_pl') {
+            } else if (val == 'radar_pl') {
                 if ($scope.checkboxModel.radar_pl == true) {
                     $scope.addRadar_plLayer();
                 } else {
